@@ -1,14 +1,12 @@
-import "../App.css";
-import pmc from "./profile.module.css";
-import React from "react";
+import '../App.css';
+import pmc from './profile.module.css';
+import React from 'react';
 
-import user from "./user.json";
-
-const Profile = () => (
+const Profile = props => (
   <div className={pmc.profile}>
     <div className={pmc.description}>
-      <img src={user.avatar} alt="User avatar" className={pmc.avatar} />
-      <p className={pmc.name}>{user.username}</p>
+      <img src={avatar} alt="User avatar" className={pmc.avatar} />
+      <p className={pmc.name}>{username}</p>
       <p className={pmc.tag}>@{user.tag}</p>
       <p className={pmc.location}>{user.location}</p>
     </div>
