@@ -1,6 +1,6 @@
 import React from 'react';
 import transactions from './transactions.json';
-// import './TransactionHistory.module.css';
+import './TransactionHistory.module.css';
 console.log(transactions);
 
 function Transaction(props) {
