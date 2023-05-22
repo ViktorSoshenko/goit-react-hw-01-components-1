@@ -1,9 +1,10 @@
-import React from "react";
-import transactions from "./transactions.json";
+import React from 'react';
+import transactions from './transactions.json';
+import thmc from './TransactionHistory.module.css';
 console.log(transactions);
 
 function Transaction(props) {
-  return transactions.map((transaction) => (
+  return transactions.map(transaction => (
     <tr key={transaction.id}>
       <td>{transaction.type}</td>
       <td>{transaction.amount}</td>

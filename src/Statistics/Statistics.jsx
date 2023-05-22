@@ -1,8 +1,6 @@
-import "../App.css";
-import smc from "./statistics.module.css";
-import React from "react";
-
-import data from "./data.json";
+import '../App.css';
+import smc from './statistics.module.css';
+import React from 'react';
 
 function Title(props) {
   const title = props.title;
@@ -22,7 +20,7 @@ function Statistics(props) {
 
       return allStat;
     }, [])
-    .map((stat) => (
+    .map(stat => (
       <li className={smc.item} key={stat.id}>
         <span className="label">{stat.label}</span>
         <span className="percentage">{stat.percentage}%</span>
