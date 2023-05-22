@@ -12,7 +12,7 @@ export const ForbesListItem = ({ name, capital, avatar, isIncrease }) => {
       <Avatar src={avatar} alt={name} />
       <Name>{name}</Name>
       <Capital>
-        {capital} <BiDollarCircle color={theme.colors.accent} size={22} />
+        {capital}
         {isIncrease ? <FcBullish /> : <FcBearish />}
       </Capital>
     </ForbesItem>
