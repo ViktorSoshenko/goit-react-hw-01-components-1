@@ -1,6 +1,6 @@
 import React from 'react';
 import transactions from './transactions.json';
-import thmc from './TransactionHistory.module.css';
+
 console.log(transactions);
 
 function Transaction(props) {
