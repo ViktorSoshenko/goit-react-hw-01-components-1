@@ -1,6 +1,7 @@
 import '../App/App.css';
 import pmc from './profile.module.css';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const Profile = ({ user }) => {
   return (
@@ -28,4 +29,15 @@ export const Profile = ({ user }) => {
       </ul>
     </div>
   );
+};
+Profile.propTypes = {
+  user: PropTypes.shape({
+    avatar: PropTypes.string,
+    username: PropTypes.string,
+    tag: PropTypes.string,
+    location: PropTypes.string,
+    followers: PropTypes.number,
+    views: PropTypes.number,
+    likes: PropTypes.number,
+  }),
 };

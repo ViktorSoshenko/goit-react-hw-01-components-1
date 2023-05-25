@@ -1,19 +1,8 @@
 import '../App/App.css';
 import smc from './statistics.module.css';
 import React from 'react';
-
-// function Title({ title }) {
-//   if (title) {
-//     console.log(title);
-//     return <h2 className={smc.title}>{title}</h2>;
-//   } else {
-//     return;
-//   }
-// }
-
-function Statistics({ title, stats }) {
-  console.log(stats);
-
+import PropTypes from 'prop-types';
+export function Statistics({ title, stats }) {
   const listItems = stats.map(stat => (
     <li className={smc.item} key={stat.id}>
       <span className="label">{stat.label}</span>
@@ -30,4 +19,14 @@ function Statistics({ title, stats }) {
   );
 }
 
-export default Statistics;
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      percentage: PropTypes.number,
+
+      id: PropTypes.string,
+    })
+  ),
+};

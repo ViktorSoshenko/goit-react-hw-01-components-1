@@ -2,38 +2,28 @@ import '../App/App.css';
 import flmc from './friendList.module.css';
 import React from 'react';
 import { FriendListItem } from 'components/FriendList/FriendListItem';
-
-// function FriendListItem({ friends }) {
-//   return friends.map(friend => (
-//     <li className={flmc.item} key={friend.id}>
-//       <span
-//         className={
-//           friend.isOnline === true ? `${flmc.status}` : `${flmc.green}`
-//         }
-//       >
-//         {friend.isOnline}
-//       </span>
-//       <img
-//         className={flmc.avatar}
-//         src={friend.avatar}
-//         alt="User avatar"
-//         width="100"
-//       />
-//       <p className="name">{friend.name}</p>
-//     </li>
-//   ));
-// }
+import PropTypes from 'prop-types';
 export function FriendList({ friends }) {
   return (
     <ul className={flmc.friendList}>
       {friends.map(friend => (
         <FriendListItem
+          key={friend.id}
           avatar={friend.avatar}
           name={friend.name}
           isOnline={friend.isOnline}
-          id={friend.id}
         />
       ))}
     </ul>
   );
 }
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      avatar: PropTypes.string,
+      name: PropTypes.string,
+      id: PropTypes.number,
+      isOnline: PropTypes.bool,
+    })
+  ),
+};

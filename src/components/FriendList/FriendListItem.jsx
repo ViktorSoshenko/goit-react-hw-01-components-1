@@ -1,9 +1,8 @@
 import React from 'react';
 import '../App/App.css';
 import flmc from './friendList.module.css';
-
+import PropTypes from 'prop-types';
 export function FriendListItem({ avatar, name, isOnline, id }) {
-  console.log(id);
   return (
     <li className={flmc.item} key={id}>
       <span className={isOnline === true ? `${flmc.status}` : `${flmc.green}`}>
@@ -14,3 +13,11 @@ export function FriendListItem({ avatar, name, isOnline, id }) {
     </li>
   );
 }
+FriendListItem.propTypes = {
+  friend: PropTypes.shape({
+    avatar: PropTypes.string,
+    name: PropTypes.string,
+    id: PropTypes.number,
+    isOnline: PropTypes.bool,
+  }),
+};
