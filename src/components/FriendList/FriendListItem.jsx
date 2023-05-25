@@ -15,9 +15,9 @@ export function FriendListItem({ avatar, name, isOnline, id }) {
 }
 FriendListItem.propTypes = {
   friend: PropTypes.shape({
-    avatar: PropTypes.string,
-    name: PropTypes.string,
-    id: PropTypes.number,
-    isOnline: PropTypes.bool,
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    isOnline: PropTypes.bool.isRequired,
   }),
 };
